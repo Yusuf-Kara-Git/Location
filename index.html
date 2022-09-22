@@ -8,6 +8,7 @@
     </head>
     <body>    
 <h1> Location</h1>
+<button onclick="getLocation()">Try It</button>
 	<p id="demo" ></p>
 <br>
 <br>
@@ -15,13 +16,13 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
 
-(() => {
+function getLocation (){
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success, error);
     } else {
         alert("Geolocation is not supported by this browser");
     }    
-})();
+};
 
 function success(position) {
   const latitude = position.coords.latitude;
